@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note View</title>
+    <script>
+
+window.addEventListener("load",init);
+           function init(){
+               NoteView();
+            }
+
+
+                function NoteView(){
+                var http = new XMLHttpRequest();
+                http.onreadystatechange = function(){
+                        if(this.readyState == 4 && this.status == 200 ){
+                           loadNoteView(this.responseText);
+                            
+                            
+                        }
+                        http.open("POST","../Server/record_view.php",true);
+                        http.send();
+                }
+             }
+
+             function loadNoteView($json){
+                var notes = JSON.parse($json);
+                for (let i = 0; i < notes.length; i++) {
+                const note = notes[i];
+              var div = document.createElement('div');
+              div.className = 'item'+i;
+              var text = document.createTextNode();
+               var title =  note['Topic'];
+               div.appendChild(title);
+
+               // var content =  note['content'];
+               // var date =  note['addedDate'];
+              
+
+                }
+                
+             }
+
+
+
+            
+
+
+
+        
+
+
+
+    </script>
+</head>
+<body>
+
+    <div></div>
+</body>
+</html>

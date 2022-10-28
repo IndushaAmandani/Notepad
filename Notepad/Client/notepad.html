@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  
+    <title>Note Taking App</title>
+    <script>
+      
+        // window.addEventListener("load",init);
+        //     function init(){
+        //         NoteView();
+        //     }
+
+        
+
+          
+
+             document.getElementById("btnView").onclick = function(){
+
+             }
+
+
+             function View(){
+
+             }
+
+       // function addNotes(){
+        //         var title = ttitle.value;
+        //         console.log(title);
+
+        //         var xhttp = new XMLHttpRequest();
+        //         xhttp.onreadystatechange = function(){
+        //             loadNoteView();
+        //         }
+
+        //         xhttp.open("POST","../add_note.php",true);
+
+        //         xhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        //         xhttp.send();
+        //}
+
+      </script>
+       
+
+    </script>
+</head>
+
+<div class="container mt-4">
+    <h1 class="display-4 text-center">
+        <i class="fas fa-book-open text-primary"></i>
+        My Notepad
+    </h1>
+    <form  action = "../Server/add_note.php" method ="POST" id="note_form">
+        
+           
+        <div>
+            <label for="title">Title</label>
+            <textarea class="form-control" id="title" name="title"></textarea>
+        </div>
+
+        <div>
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+            
+        </div>
+        <br>
+        
+        <input class="btn btn-primary btn-block" type="reset" value="Clear All" >
+
+        <br>
+
+        <input type="submit" value="Add Note" class="btn btn-primary btn-block" name = "submit_btn">
+    </form>
+
+        <br>
+        <div>
+        <input type="button"  onClick = "parent.location='noteView.html'" id = "btnView" value="View Notes" class="btn btn-primary btn-block" name = "view_btn">
+        </div>
+   
+    
+    <br>
+    <div id="note-list" class="mt-5 d-flex flex-wrap">
+       
+    </div>
+</div>
+
+</body>
+</html>
